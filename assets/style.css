@@ -52,3 +52,12 @@ h1 {
 .labelOff {
     display:none;
 }
+.errorOn {
+    display:block;
+    background-color: lightcoral;
+    border: solid #303030 3px;
+    border-radius: 10px;
+    width : 80%;
+    margin-left: auto;
+    margin-right: auto;
+}

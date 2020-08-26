@@ -1,7 +1,17 @@
 let labelOther = document.getElementById("labelDefineOther");
 let inputOther = document.getElementById("inputOtherText");
-let alertBox = document.getElementById('alert');
-alertBox.className ="labelOff";
+let send = document.getElementById('send');
+let lastname = document.getElementById('lastnameInput');
+let firstname = document.getElementById('firstnameInput');
+let errorDiv = document.getElementById('error');
+let mail = document.getElementById('emailInput');
+let selectCountry = document.getElementById('CountrySelect');
+let form = document.getElementById('form');
+let genderSelect = document.getElementById('genderSelect');
+let classAlert = "labelOff";
+labelOther.className="labelOn";
+inputOther.className="labelOn";
+
 
 
 document.getElementById('subject3').addEventListener('click',function(){
@@ -14,15 +24,32 @@ function onclickRadio(){
 }
 
 
-function checkForm(){
-let lastname = document.getElementById("lastnameInput");
-if ( lastname.value ==""){
-     alertBox.className ="labelOn";
-    alert("testfail");
-}
-else {
-    document.getElementById('form').setAttribute("action","assets/developpement.php");
-    alert("test");
-
-}
+function validateForm(){
+    //  event.preventDefault();
+    if (lastname.value == "" || firstname.value=="" || mail.value=="" ||selectCountry.value=="" || genderSelect.value=="Choose"){
+        event.preventDefault();
+        classAlert = "errorOn";
+        errorDiv.className=classAlert;
+        alert("Error : Can't send the form to serv, form is incomplete !");
+    }
+    else {
+        form.setAttribute('action','assets/developpement.php');
+    }
+    if (lastname.value ==""){
+        lastname.classList.add('is-invalid');
+    }
+    if(firstname.value==""){
+        firstname.classList.add('is-invalid');  
+    }
+    if (mail.value==""){
+        mail.classList.add('is-invalid');
+    }
+    if (selectCountry.value==""){
+        selectCountry.classList.add('is-invalid');
+    }
+    if (genderSelect.value=="Choose"){
+        genderSelect.classList.add('is-invalid');
+    }
 };
+
+  
