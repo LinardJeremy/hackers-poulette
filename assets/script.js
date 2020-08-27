@@ -8,6 +8,7 @@ let mail = document.getElementById('emailInput');
 let selectCountry = document.getElementById('CountrySelect');
 let form = document.getElementById('form');
 let genderSelect = document.getElementById('genderSelect');
+let textArea = document.getElementById('message');
 let classAlert = "labelOff";
 labelOther.className="labelOn";
 inputOther.className="labelOn";
@@ -26,7 +27,8 @@ function onclickRadio(){
 
 function validateForm(){
     //  event.preventDefault();
-    if (lastname.value == "" || firstname.value=="" || mail.value=="" ||selectCountry.value=="" || genderSelect.value=="Choose"){
+    if (lastname.value == "" || firstname.value=="" || mail.value=="" ||selectCountry.value=="" || genderSelect.value=="Choose"
+      ||textArea.value==""){
         event.preventDefault();
         classAlert = "errorOn";
         errorDiv.className=classAlert;
@@ -49,6 +51,9 @@ function validateForm(){
     }
     if (genderSelect.value=="Choose"){
         genderSelect.classList.add('is-invalid');
+    }
+    if (textArea.value==""){
+        textArea.classList.add('is-invalid');
     }
 };
 

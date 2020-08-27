@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Bellota-Bold';
-    src: url('assets/police/Bellota-Bold');
+    src: url('assets/police/Bellota-Bold.otf') format('otf');
 }
 @font-face {
     font-family: 'Bellota-light';
-    src: url('assets/police/Bellota-Light');
+    src: url('assets/police/Bellota-Light.otf') format('otf');
 }
 body {
     margin: 0;
@@ -28,6 +28,10 @@ h1 {
     text-align: center;
     margin-bottom: 3rem;
     color : #303030;
+    border: solid #303030 3px;
+    border-radius: 10px;
+    background-color: white;
+
 }
 .sectionForm {
     border: solid #303030 3px;
@@ -39,6 +43,7 @@ h1 {
     width: 20rem;
     margin-left: auto;
     margin-right: auto;
+    background-color: #0C5D69;
 }
 .formCheck {
     border : solid lightgrey 1px;
@@ -60,4 +65,10 @@ h1 {
     width : 80%;
     margin-left: auto;
     margin-right: auto;
+}
+.confirmation {
+    border: none;
+}
+.buttonSend a:visited{
+    color: white;
 }

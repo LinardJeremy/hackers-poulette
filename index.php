@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Contact</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/style.css">
     </head>
-    <body lang="eng">
+    <body>
         <header id="header">
-            <img  class="logo" src="assets/img/hackers-poulette-logo.png" alt="logo">
-            <h1>Contact Form</h1>
+            <img  class="logo" src="assets/img/hackers-poulette-logo.png" alt="Website's logo">
+            <h1 class="col-10 mx-auto">Contact Form</h1>
         </header>
         <div class="col-12 mb-3">
          <div id="error" class="labelOff">
@@ -22,17 +22,17 @@
        
         <form id="form" method="post">
             <div class="form-group row col-12 mt-3">
-                <label for="LastName" class="col-3">LastName :</label>
+                <label for="lastnameInput" class="col-3">LastName :</label>
                 <input type="text" class="form-control col-3 text-center " name="lastname"id="lastnameInput" placeholder="Write here your lastname">
-                <label for="Firstname" class="col-3 text-center">Firstname :</label>
+                <label for="firstnameInput" class="col-3 text-center">Firstname :</label>
                 <input type="text" class="form-control col-3 text-center" name="firstname" id="firstnameInput" placeholder="Write here your firstname">
               </div>
             <div class="form-group">
-              <label for="emailAdress">Email address :</label>
+              <label for="emailInput">Email address :</label>
               <input type="email" name="mail" class="form-control" id="emailInput" placeholder="name@example.com">
             </div>
             <div class="form-group">
-              <label for="Gender">Gender :</label>
+              <label for="genderSelect">Gender :</label>
               <select class="form-control" name="gender" id="genderSelect">
                 <option value="Choose">Choose a gender.</option>
                 <option value="Man">Man</option>
@@ -41,7 +41,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="Country">Country</label>
+              <label for="CountrySelect">Country</label>
               <select multiple class="form-control" id="CountrySelect" name="country">
                 <option value="Belgium">Belgium</option>
                 <option value="England">England</option>
@@ -50,7 +50,8 @@
                 <option value="Spain">Spain</option>
               </select>
             </div>
-            <label for="Gender">Choose the subject of your message :</label>
+            <fieldset id="subjectCheck">
+            <legend>Choose the subject of your message :</legend>
             <div class="formCheck">
               <div class="custom-control custom-radio custom-control-inline ml-5 mt-4">
                   <input onclick="onclickRadio()" class="custom-control-input" type="radio" id="subject1" name="subject" value="problem">
@@ -63,9 +64,10 @@
               <div class="custom-control custom-radio custom-control-inline ml-3">
                   <input class="custom-control-input" type="radio" id="subject3" name="subject" value="other" checked>
                   <label class="custom-control-label" for="subject3">Other</label>
-              </div>     
-          </div>
-          <label id="labelDefineOther" class="labelOff">Define your subject here :</label>
+              </div>   
+            </div>
+            </fieldset>  
+          <label id="labelDefineOther" for="inputOtherText" class="labelOff">Define your subject here :</label>
           <input class="labelOff" name="subjectOther" type="text" id="inputOtherText">
             <!-- Text area -->
             <div class="form-group">
